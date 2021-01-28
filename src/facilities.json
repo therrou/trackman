@@ -1,0 +1,45 @@
+[
+    {
+        "id":"id102030",
+        "createdAt":"123123123",
+        "name":"Facility 1",
+        "type":"Range",
+        "address":"Mariendalsvej 22"
+    },
+    {
+        "id":"id102030",
+        "createdAt":"1231231223",
+        "name":"facilityName2",
+        "type":"Range",
+        "address":"Mariendalsvej 33"
+    },
+    {
+        "id":"id102035",
+        "createdAt":"123123123",
+        "name":"facilityName3",
+        "type":"Range",
+        "address":"Mariendalsvej 44"
+    },
+    {
+        "id":"id102039",
+        "createdAt":"123123123",
+        "name":"facilityName4",
+        "type":"Range",
+        "address":"Mariendalsvej 55"
+    },
+    {
+        "id":"id102038",
+        "createdAt":"123123123",
+        "name":"facilityName5",
+        "type":"Range",
+        "address":"Mariendalsvej 66"
+    }, 
+    {
+        "id":"id103333",
+        "createdAt":"123123123",
+        "name":"facilityName5",
+        "type":"Range",
+        "address":"Mariendalsvej 77"
+    }
+
+]

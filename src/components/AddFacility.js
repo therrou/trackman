@@ -11,6 +11,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { v4 as uuidv4 } from 'uuid';
+import { createFacility } from '../services';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -45,6 +47,7 @@ const [radioValue, setRadioValue] = useState(' ');
     setRadioValue(event.target.value)
     setFormInput({
     ...formInput,
+    id: uuidv4(),
     [event.target.name]: event.target.value.trim()
     
 })
@@ -52,9 +55,10 @@ console.log(event.target.value)};
 
 const handleSubmit = (event) =>{
     event.preventDefault()
-    props.addFacilitie(formInput)
+    createFacility(formInput)
     event.target.reset()
 }
+
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -67,7 +71,7 @@ const handleSubmit = (event) =>{
     return (
         <div className={classes.root}>
             <Button variant="outlined" color="primary" onClick={handleClickOpen} className={classes.btnAddFacilitie}>
-                Add Facilitie
+                Add Facility
             </Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
              <form onSubmit={handleSubmit} >

@@ -15,21 +15,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const GridContainer = () => {
+export const CardsContainer = (data) => {
   const classes = useStyles();
+  console.log(data)
+
+  // const dataObject = JSON.parse(data.facilities)
+
+  // // console.log(dataObject)
+  // const objectArray = Object.entries(dataObject);
+  // objectArray.map( (key) => {
+  //   console.log(key[1]);
+  // })
+
+  
 
   return (
     <div className={classes.root}>
       <Grid container >
-        <Grid item xs={6} sm={4}>
-            <FacilityCard />
-        </Grid>
-        <Grid item xs={4} sm={4}>
-            <FacilityCard />
-        </Grid>
-        <Grid item xs={4} sm={4}>
-            <FacilityCard />
-        </Grid>
+      { 
+            data.length > 0 ?
+            data.map((prop) => {
+                  return <Grid item lg={4}>
+                        <FacilityCard 
+                            id={prop.id}
+                            name={prop.name}
+                            address={prop.address}
+                            type={prop.type}
+                        />
+                     </Grid>
+          })
+          :
+          <div > <h2> Loading.... </h2></div>
+        }
       </Grid>
     </div>
   );
