@@ -11,6 +11,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -45,6 +46,7 @@ const [radioValue, setRadioValue] = useState(' ');
     setRadioValue(event.target.value)
     setFormInput({
     ...formInput,
+    id: uuidv4(),
     [event.target.name]: event.target.value.trim()
     
 })

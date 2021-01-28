@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
+    marginTop: '5%',
     width: '90%'
   },
   facilityCardTitle: {
@@ -27,20 +28,20 @@ const useStyles = makeStyles({
   }
 });
 
-export  const FacilityCard = () => {
+export  const FacilityCard = ({id, name, address, type}) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card key={id} className={classes.root}>
       <CardContent>
         <Typography className={classes.facilityCardTitle} variant="h5" component="h2">
-          Facility Name
+          {name}
         </Typography>
         <Typography className={classes.facilitySubtitle} color="textSecondary">
-          Facility Type
+          {type}
         </Typography>
         <Typography className={classes.facilityAddress} variant="body2" component="p">
-          Facility Address
+          {address}
         </Typography>
       </CardContent>
       <CardActions>
